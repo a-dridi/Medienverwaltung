@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Startseite -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pm="http://primefaces.org/mobile">
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+    <h:head>
+        <title>Haushaltsverwaltung - Startseite</title>
+        <link href="./css/default.css" rel="stylesheet" type="text/css" />
+        <link href="./css/cssLayout.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+
+    <h:body>
+
+        <div id="top" class="top">
+            <ui:insert name="top">
+                <img src="./css/haushaltverwaltung_logo.png" height="80px"/>
+                <br/>
+
+                <h:outputText value="Eingeloggter Benutzer:  #{benutzerController.benutzer.username}"
+                              rendered="#{benutzerController.loggedIn}" />
+                <h:outputText style="color: red" 
+                              value="Nicht eingeloggt - Bitte loggen Sie sich ein!"
+                              rendered="#{not benutzerController.loggedIn}" />
+            </ui:insert>
+        </div>
+        <div>
+            <div id="left">
+                <ui:insert name="left">
+                    <h:form id="navi">
+                        <h:panelGrid columns="1">
+
+                            <p:commandButton value="Startseite"
+                                             ajax="false"
+                                             style="width:140px"
+                                             action="index" />
+
+                            <!--Benutzer eingeloggt-->
+
+                            <p:commandButton value="Benutzerdefinierte Abfragen" 
+                                             action="benutzerdefiniert" 
+                                             ajax="false"
+                                             style="width:140px"
+                                             rendered="#{benutzerController.loggedIn}"/>
+
+
+                            <p:commandButton value="Ausgaben" 
+                                             action="ausgaben" 
+                                             ajax="false"
+                                             style="width:140px"
+                                             rendered="#{benutzerController.loggedIn}"/>
+
+                            <p:commandButton value="Buecher" 
+                                             action="buecher" 
+                                             ajax="false"
+                                             style="width:140px"
+                                             rendered="#{benutzerController.loggedIn}"/>
+
+                            <p:commandButton value="Ordnung" 
+                                             action="ordnung" 
+                                             ajax="false"
+                                             style="width:140px"
+                                             rendered="#{benutzerController.loggedIn}"/>
+
+                            <p:commandButton value="Logout" 
+                                             action="#{benutzerController.logout}" 
+                                             ajax="false"
+                                             style="width:140px"
+                                             rendered="#{benutzerController.loggedIn}"/>
+                        </h:panelGrid>
+                    </h:form>
+                </ui:insert>
+            </div>
+            <div id="content" class="left_content">
+                <ui:insert name="content">
+                    <p:messages closable="true" />
+                    <h:form id="loginForm">
+                        <!--Loginformular oder Übersicht für eingeloggten Benutzer-->
+
+                        <h:outputText style="color: blue" 
+                                      value="Bitte Benutzernamen und Passwort eingeben!"
+                                      rendered="#{not benutzerController.loggedIn}" />
+                        <h:outputText style="color: black" 
+                                      value="Willkommen! #{authentifizierungController.username}  - Bitte wählen Sie einen Punkt vom linken Menü aus."
+                                      rendered="#{benutzerController.loggedIn}" /> 
+                        <br/>
+                        <br/>
+                        <h:panelGrid columns="2" rendered="#{!benutzerController.loggedIn}">
+                            <h:outputLabel for="username" value="Benutzername:" />
+                            <h:inputText id="username" value="#{authentifizierungController.username}"/>
+                            <h:outputLabel for="password" value="Passwort:" />
+                            <h:inputSecret id="password" value="#{authentifizierungController.password}"/>
+                        </h:panelGrid>
+
+
+                        <!--Benutzer eingeloggt-->
+                        <h:panelGrid columns="2" rendered="#{benutzerController.loggedIn}">
+                            <h:outputLabel for="Benutzer" value="Benutzername:" />
+                            <h:outputText id="emailaddresse" value="#{benutzerController.benutzer.username}"/>
+                            <br/>
+                            <h:form>
+                                <p:clock mode="analog" />
+                            </h:form>
+
+
+
+
+
+                        </h:panelGrid>
+
+                        <p:commandButton value="Login" 
+                                         action="#{authentifizierungController.login}" 
+                                         ajax="false"
+                                         rendered="#{!benutzerController.loggedIn}"/>
+
+
+                        <br/>
+                        <br/>
+
+                    </h:form>
+                </ui:insert>
+            </div>
+        </div>
+
+
+    </h:body>
+
+
+
+</html>
+
