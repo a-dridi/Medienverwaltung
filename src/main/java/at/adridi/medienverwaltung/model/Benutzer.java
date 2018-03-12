@@ -14,7 +14,7 @@ import org.hibernate.annotations.Check;
 
 /**
  *
- * @author 20100012
+ * @author adridi
  */
 @Entity
 //Passwort hat eine Länge von min. 6 Zeichen

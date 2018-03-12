@@ -9,7 +9,7 @@ import at.adridi.medienverwaltung.db.DAO;
 
 /**
  *
- * @author 20100012
+ * @author adridi
  */
 public class Programm {
 

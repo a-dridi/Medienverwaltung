@@ -5,7 +5,7 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
     <lifecycle>
-        <phase-listener>haushaltsverwaltung.listener.SessionPhaseListener</phase-listener>
+        <phase-listener>at.adridi.medienverwaltung.listener.SessionPhaseListener</phase-listener>
     </lifecycle>
     
     <application>
