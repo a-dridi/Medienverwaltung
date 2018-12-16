@@ -10,19 +10,19 @@
         <property name="hibernate.connection.password">PASSWORT</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.id.new_generator_mappings">true</property>
-        <mapping class="haushaltsverwaltung.model.DatenbankNotizen"/>
-        <mapping class="haushaltsverwaltung.model.Buecher"/>
-        <mapping class="haushaltsverwaltung.model.Buecherkategorie"/>
-        <mapping class="haushaltsverwaltung.model.Buecherzustand"/>
-        <mapping class="haushaltsverwaltung.model.MedienMusik"/>
-        <mapping class="haushaltsverwaltung.model.MedienMusikGenre"/>
-        <mapping class="haushaltsverwaltung.model.MedienSoftware"/>
-        <mapping class="haushaltsverwaltung.model.MedienSoftwareBetriebssystem"/>
-        <mapping class="haushaltsverwaltung.model.MedienSoftwareHersteller"/>
-        <mapping class="haushaltsverwaltung.model.MedienVideoclips"/>
-        <mapping class="haushaltsverwaltung.model.MedienVideoclipsSprache"/>
-        <mapping class="haushaltsverwaltung.model.MedienVideos"/>
-        <mapping class="haushaltsverwaltung.model.MedienVideosGenre"/>
-        <mapping class="haushaltsverwaltung.model.MedienVideosSprache"/>
+        <mapping class="at.adridi.medienverwaltung.model.DatenbankNotizen"/>
+        <mapping class="at.adridi.medienverwaltung.model.Buecher"/>
+        <mapping class="at.adridi.medienverwaltung.model.Buecherkategorie"/>
+        <mapping class="at.adridi.medienverwaltung.model.Buecherzustand"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienMusik"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienMusikGenre"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienSoftware"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienSoftwareBetriebssystem"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienSoftwareHersteller"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienVideoclips"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienVideoclipsSprache"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienVideos"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienVideosGenre"/>
+        <mapping class="at.adridi.medienverwaltung.model.MedienVideosSprache"/>
     </session-factory>
 </hibernate-configuration>
